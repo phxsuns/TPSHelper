@@ -1,0 +1,33 @@
+{
+  "name": "TPS Helper",
+  "version": "0.9.0",
+  "description": "TPS Helper",
+  "background": {
+      "scripts": [ "background.js" ]
+   },
+  "permissions":[
+    "http://*/*",
+	"tabs",
+	"clipboardWrite",
+	"clipboardRead"
+  ],
+  "content_scripts":[
+  {
+	"matches":[
+	  "http://tps.tms.taobao.com/*"
+	],
+	"js":["content.js"],
+	"run_at":"document_idle",
+	"all_frames":false
+  }
+  ],
+  "icons": {
+      "128": "images/ico.png"
+   },
+  "page_action":
+  {
+    "default_icon" : "images/ico.png",
+    "default_title" : "TPS Helper"
+  },
+  "manifest_version": 2
+}
